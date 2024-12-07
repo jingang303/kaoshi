@@ -26,9 +26,14 @@ public class QuestionController {
     /**
      * 修改
      */
-    @PutMapping("/updateById/{id    }")
-    public Result updateById(@PathVariable Integer id) {
-        questionService.updateById(id);
+
+    @PutMapping("/updateById/{id}")
+    public Result updateById(@PathVariable Integer id,@RequestBody Question question) {
+        question.setId(id);
+
+       // Integer teacherId=questionService.getTeacherId(id);
+       // question.setTeacherId(teacherId);
+        questionService.updateById(question);
         return Result.success();
     }
     /**

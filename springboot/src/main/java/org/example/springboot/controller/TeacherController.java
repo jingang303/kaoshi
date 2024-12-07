@@ -17,7 +17,6 @@ import java.util.List;
 public class TeacherController {
     @Resource
     private TeacherService teacherService;
-
         /*查询登录这个网站的教师的信息的接口
          *
          */

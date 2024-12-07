@@ -5,8 +5,10 @@
 
 <mapper namespace="org.example.springboot.mapper.CourseMapper">
     <select id="selectCourseByTeacherUsername" resultType="org.example.springboot.entity.Course">
-        select * from courses
-       where username = #{username}
+        SELECT c.*, t.name AS teacher_name
+        FROM teachers t
+                 INNER JOIN courses c ON t.id = c.teacher_id
+        WHERE t.username = #{username}
     </select>
     <select id="selectCourseByStudentUsername" resultType="org.example.springboot.entity.Course">
         select c.course_name

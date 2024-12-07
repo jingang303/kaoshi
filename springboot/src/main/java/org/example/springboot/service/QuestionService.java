@@ -22,9 +22,6 @@ public class QuestionService {
     }
 
 
-    public void updateById(Integer id, Question question    ) {
-        questionMapper.updateById(question);
-    }
 
     public void deleteById(Integer id) {
         questionMapper.deleteById(id);
@@ -32,5 +29,9 @@ public class QuestionService {
 
     public List<Question> selectAll() {
         return questionMapper.selectAll();
+    }
+
+    public void updateById(Question question) {
+        questionMapper.updateById(question);
     }
 }

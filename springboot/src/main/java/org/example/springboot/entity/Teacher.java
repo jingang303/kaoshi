@@ -6,11 +6,21 @@ public class Teacher extends UserAccount {
     private String username;
     private String password;
     private String identity;
+
+    private String name;
     private String gender;
     private int phone;
     private int employeeId;
     private String college;
     private String course;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     @Override
     public String getIdentity() {

@@ -10,7 +10,7 @@
     </insert>
 
     <delete id="deleteById" parameterType="java.lang.Integer">
-        delete from questions where id = #{id}
+        delete  from questions where id = #{id}
     </delete>
 
     <update id="updateById" parameterType="org.example.springboot.entity.Question">
