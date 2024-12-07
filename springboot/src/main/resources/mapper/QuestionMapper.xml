@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.springboot.mapper.QuestionMapper">
+    <insert id="insert" parameterType="org.example.springboot.entity.Question">
+        insert into questions (content, course_id, type, option_a, option_b, option_c, option_d, answer, teacher_id)
+        values (#{content}, #{courseId}, #{type}, #{optionA}, #{optionB}, #{optionC}, #{optionD}, #{answer}, #{teacherId})
+    </insert>
+
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        delete from questions where id = #{id}
+    </delete>
+
+    <update id="updateById" parameterType="org.example.springboot.entity.Question">
+        update questions
+        set
+            content = #{content},
+            course_id = #{courseId},
+            type = #{type},
+            option_a = #{optionA},
+            option_b = #{optionB},
+            option_c = #{optionC},
+            option_d = #{optionD},
+            answer = #{answer},
+            teacher_id = #{teacherId}
+        where id = #{id}
+    </update>
+
+    <select id="selectAll" resultType="org.example.springboot.entity.Question">
+        select * from questions
+    </select>
+
+
+</mapper>

@@ -1,0 +1,15 @@
+
+server:
+  port: 3566
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: ZENGnan20051018@
+    ##url不确定后半部分对不对
+    url: jdbc:mysql://localhost:3306/examsystem?useUnicode=true&characterEncoding=utf8
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true

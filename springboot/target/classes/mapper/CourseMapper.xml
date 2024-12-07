@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.springboot.mapper.CourseMapper">
+    <select id="selectCourseByTeacherId" resultType="org.example.springboot.entity.Course">
+        select * from courses
+       where teacher_id = #{teacherId}
+    </select>
+    <select id="selectCourseByStudentId" resultType="org.example.springboot.entity.Course">
+        select c.course_name
+        from courseselection_records csr
+                 join courses c on csr.course_id = c.id
+        where csr.student_id = #{studentId};
+    </select>
+    <select id="selectCourse" resultType="org.example.springboot.entity.Course">
+        select * from courses
+    </select>
+</mapper>
