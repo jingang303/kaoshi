@@ -17,7 +17,8 @@ public class WebController {
         UserAccount dbUser=userService.login(user);
         return Result.success(dbUser);
     }
-//    //需要注册吗？
+
+//    //需要注册吗？先不写
 //    @CrossOrigin
 //    @PostMapping("/register")
 //    public Result register(@RequestBody UserAccount user){

@@ -4,6 +4,7 @@ import jakarta.annotation.Resource;
 import org.example.springboot.common.Result;
 import org.example.springboot.entity.Question;
 import org.example.springboot.service.QuestionService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/question")
 public class QuestionController {
-    @Resource
+    @Autowired
     private QuestionService questionService;
 
     /**
@@ -26,6 +27,8 @@ public class QuestionController {
     /**
      * 修改
      */
+    //ok
+//前端传问题内容给我，然后我把内容更新到数据库（question）
 
     @PutMapping("/updateById/{id}")
     public Result updateById(@PathVariable Integer id,@RequestBody Question question) {
@@ -45,9 +48,9 @@ public class QuestionController {
         return Result.success();
     }
     /**
-     * 查询所有
+     * 查询对应科目的所有考题
      */
-    @GetMapping("/selectAll")
+    @GetMapping("/selectAll/{course_Id}")
     public Result selectAll() {
         List<Question> list = questionService.selectAll();
         return Result.success(list);

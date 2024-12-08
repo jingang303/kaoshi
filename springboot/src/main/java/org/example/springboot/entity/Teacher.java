@@ -2,17 +2,27 @@ package org.example.springboot.entity;
 
 public class Teacher extends UserAccount {
 
-    private int id;
+    private Integer id;
     private String username;
     private String password;
     private String identity;
-
+    private Integer userId;
     private String name;
     private String gender;
     private int phone;
     private int employeeId;
     private String college;
     private String course;
+    @Override
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+
 
     public String getName() {
         return name;

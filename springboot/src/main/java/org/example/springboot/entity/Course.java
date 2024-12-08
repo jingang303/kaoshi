@@ -4,6 +4,15 @@ public class Course {
     private Integer id;
     private Integer teacherId;
     private String courseName;
+    private String courseDescription;
+
+    public String getCourseDescription() {
+        return courseDescription;
+    }
+
+    public void setCourseDescription(String courseDescription) {
+        this.courseDescription = courseDescription;
+    }
 
     public Integer getId() {
         return id;

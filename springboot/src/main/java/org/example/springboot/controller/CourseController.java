@@ -20,7 +20,7 @@ public class CourseController {
     /**
      * 根据老师id呈现相应的课程信息
      */
-    @GetMapping("/teacher_courses/{username}")
+    @GetMapping("/teacher_courses/{userid}")
     public Result selectCourseByTeacherUsername(@PathVariable String username) {
         List<Course> list =courseService.selectCourseByTeacherUsername(username);
         return Result.success(list);
@@ -34,7 +34,7 @@ public class CourseController {
     /**
      * 根据学生名字呈现所选择课程信息
      */
-    @GetMapping("/student_courses/{username}")
+    @GetMapping("/student_courses/{userid}")
     public Result selectCourseByStudentName(@PathVariable String username) {
         List<Course> list =courseService.selectCourseByStudentName(username);
         return Result.success(list);
